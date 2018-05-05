@@ -1,0 +1,6 @@
+env/*
+build/*
+dist/*
+.ipynb_checkpoints/*
+streelib/__pycache__/*
+test*
