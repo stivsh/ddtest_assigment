@@ -14,6 +14,7 @@ there is an edge from A to B.
 
 Test files weren't be provided so use "generate" arg to create test examples
 with pictures of trees in a current directory.
+[It's not up to date but it gives good intuition how it works.](https://github.com/stivsh/ddtest_assigment/blob/master/Experiments.ipynb)
 
 # INSTALLATION
 
