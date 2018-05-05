@@ -4,3 +4,4 @@ dist/*
 .ipynb_checkpoints/*
 streelib/__pycache__/*
 test*
+my_simple_tree_library.egg-info

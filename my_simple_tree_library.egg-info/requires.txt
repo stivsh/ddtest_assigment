@@ -1,6 +1,0 @@
-networkx
-docopt
-matplotlib
-pydot
-scipy
-numpy
