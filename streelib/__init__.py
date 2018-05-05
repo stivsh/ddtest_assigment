@@ -10,18 +10,8 @@ B->C;
 Where A,B and C are Nodes in an input tree and A->B indicates that
 there is an edge from A to B.
 
-Test files weren't be provided so use "generate" arg to create test examples
-with pictures of trees in a current directory.
-
 Usage:
-    waysintree parsetree <file_name> [ --delimiter DELIMETER ]
-    waysintree generate
-    waysintree tests
-
-Arguments:
-  parsetree  parse tree and output all ways
-  generate create test files in current directory
-  tests perform all tests
+    waysintree <file_name> [ --delimiter DELIMETER ]
 
 Options:
   -h --help     show this help message and exit
@@ -31,28 +21,19 @@ Options:
 
 from .structures import Node, Tree
 from .algths import df_traversal
-from .halperfuncs import generate_tree, save_tree, load_tree, draw_tree
+from .halperfuncs import load_tree, save_tree, way_to_str
 
 __all__ = ['Node', 'Tree', 'df_traversal',
-            'generate_tree', 'save_tree', 'load_tree', 'draw_tree']
+            'load_tree', 'save_tree', 'way_to_str']
 
 from docopt import docopt
-from .tests import generate_test_files
 from .halperfuncs import way_to_str
 
 def main():
     args = docopt(__doc__)
 
-    if args['generate']:
-        print('generate test examples')
-        generate_test_files()
-
-    elif args['tests']:
-        print('performe tests')
-
-    elif args['parsetree']:
-        tree = load_tree(args['<file_name>'])
-        ways = df_traversal(tree)
-        print("\n".join([ way_to_str(way,
-                    delimiter = ['', args['DELIMETER']][args['--delimiter']])
-                    for way in ways ]))
+    tree = load_tree(args['<file_name>'])
+    ways = df_traversal(tree)
+    print("\n".join([ way_to_str(way,
+                delimiter = ['', args['DELIMETER']][args['--delimiter']])
+                for way in ways ]))
