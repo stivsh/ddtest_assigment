@@ -14,12 +14,12 @@ there is an edge from A to B.
 
 [It's not up to date but it gives good intuition how it works.](https://github.com/stivsh/ddtest_assigment/blob/master/Experiments.ipynb)
 
-# SIMPLEST CASE
+# SIMPLEST CASE.
 * pip3 install the_simple_tree_lib
 * waysintree <file_name>
 
 
-# INSTALLATION
+# INSTALLATION.
 
 ### Optional:
 * python3 -m venv env
@@ -31,7 +31,7 @@ there is an edge from A to B.
 ### OR:
 * python3 setup.py install
 
-### RUN
+# RUN.
 waysintree -h
 waysintree parsetree test2_4.tr --delimiter .
 A.B.D
@@ -51,9 +51,9 @@ Usage:
 #### Options:
 * --delimiter   delimiter between nodes in a way
 
-#### Tests
-##### Lib tests
+# Tests.
+## Lib tests:
 * python3 -m unittest streelib/tests/test_lib.py -v
 
-##### CMD util tests
+## CMD util tests:
 * python3 -m unittest streelib/tests/test_cmd.py -v
