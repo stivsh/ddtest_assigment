@@ -14,6 +14,11 @@ there is an edge from A to B.
 
 [It's not up to date but it gives good intuition how it works.](https://github.com/stivsh/ddtest_assigment/blob/master/Experiments.ipynb)
 
+# SIMPLEST CASE
+* pip3 install the_simple_tree_lib
+* waysintree <file_name>
+
+
 # INSTALLATION
 
 ### Optional:
