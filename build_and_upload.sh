@@ -1,4 +1,4 @@
-python3 setup-waysintree.py bdist_wheel --universal && twine upload dist/*
+python3 setup.py bdist_wheel --universal && twine upload dist/*
 rm -rf dist
 rm -rf build
-rm -rf my_simple_tree_library.egg-info
+rm -f *.egg-info

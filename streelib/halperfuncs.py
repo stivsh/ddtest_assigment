@@ -2,7 +2,6 @@
 """
 from .structures import Tree, Node
 from collections import deque
-import networkx as nx
 from collections import deque
 
 
@@ -38,7 +37,7 @@ def load_tree(fname):
     fname :
         name of a file.
         There could be is a simple text file with lines like
-        A->B;\n, or .dot file.
+        A->B;\n.
 
     Returns
     -------
@@ -53,14 +52,11 @@ def load_tree(fname):
 
     connections = []
 
-    if len(fname.split('.')) > 1 and fname.split('.')[-1] == "dot":
-        G = nx.drawing.nx_pydot.read_dot(fname)
-        connections = [ (edge[0], edge[1]) for edge in G.edges ]
-    else:
-        with open(fname, "r") as file:
-            lines = file.readlines()
-            for line in lines:
-                node_names = line.split(';')[0].split('->')
+    with open(fname, "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            node_names = line.strip().split(';')[0].split('->')
+            if len(node_names) == 2:
                 connections.append(node_names)
 
     nodes = dict()
@@ -75,7 +71,7 @@ def load_tree(fname):
         nodes_with_input.add(cto)
 
     root_condidates = list(set(nodes.keys()).difference(nodes_with_input))
-
+    
     if len(root_condidates) != 1:
         raise NoRootException(len(root_condidates))
 

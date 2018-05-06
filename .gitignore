@@ -5,3 +5,6 @@ dist/*
 streelib/__pycache__/*
 test*
 my_simple_tree_library.egg-info
+*.pyc
+*.egg-info
+*.egg

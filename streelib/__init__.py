@@ -4,7 +4,7 @@ DFS traversal.
 Cause this all was done just for as a test work for the job application.
 
 This script takes a file with a tree data and outputs all ways in this tree.
-Files cat be a .dot file or a simple text file, with lines like this:
+File is simple text file, with lines like this:
 A->B;
 B->C;
 Where A,B and C are Nodes in an input tree and A->B indicates that
@@ -20,11 +20,12 @@ Options:
 """
 
 from .structures import Node, Tree
-from .algths import df_traversal
-from .halperfuncs import load_tree, save_tree, way_to_str
+from .algths import df_traversal, CircleInTreeException
+from .halperfuncs import load_tree, save_tree, way_to_str, NoRootException
 
 __all__ = ['Node', 'Tree', 'df_traversal',
-            'load_tree', 'save_tree', 'way_to_str']
+            'load_tree', 'save_tree', 'way_to_str',
+            'CircleInTreeException', 'NoRootException']
 
 from docopt import docopt
 from .halperfuncs import way_to_str
