@@ -24,17 +24,18 @@ from .algths import df_traversal, CircleInTreeException
 from .halperfuncs import load_tree, save_tree, way_to_str, NoRootException
 
 __all__ = ['Node', 'Tree', 'df_traversal',
-            'load_tree', 'save_tree', 'way_to_str',
-            'CircleInTreeException', 'NoRootException']
+           'load_tree', 'save_tree', 'way_to_str',
+           'CircleInTreeException', 'NoRootException']
 
 from docopt import docopt
 from .halperfuncs import way_to_str
+
 
 def main():
     args = docopt(__doc__)
 
     tree = load_tree(args['<file_name>'])
     ways = df_traversal(tree)
-    print("\n".join([ way_to_str(way,
-                delimiter = ['', args['DELIMETER']][args['--delimiter']])
-                for way in ways ]))
+    print("\n".join([way_to_str(way,
+                     delimiter=['', args['DELIMETER']][args['--delimiter']])
+                     for way in ways]))

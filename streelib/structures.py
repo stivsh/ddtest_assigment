@@ -4,6 +4,7 @@ Node and Tree
 
 from collections import deque
 
+
 class Node(object):
     """Node of a tree.
     Contains references of other nodes
@@ -26,7 +27,7 @@ class Tree(object):
     allways herarhical sorted!
     """
 
-    def __init__(self, root_node = None ):
+    def __init__(self, root_node=None):
 
         if root_node:
             self.root_node = root_node

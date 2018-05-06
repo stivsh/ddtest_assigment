@@ -11,8 +11,7 @@ setup(
     packages=['streelib'],
     install_requires=['docopt'],
     entry_points={
-    'console_scripts': [
-        'waysintree=streelib:main',
-    ],
-},
+        'console_scripts': [
+            'waysintree=streelib:main', ],
+            },
 )

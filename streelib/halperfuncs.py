@@ -15,7 +15,8 @@ def save_tree(tree, fname):
     with open(fname, "w") as file:
         for node in tree.nodes():
             for child in node.connections:
-                file.write("{pname}->{cname};\n".format(pname=node,cname=child))
+                edge = "{pname}->{cname};\n".format(pname=node, cname=child)
+                file.write(edge)
 
 
 class NoRootException(Exception):
@@ -71,13 +72,13 @@ def load_tree(fname):
         nodes_with_input.add(cto)
 
     root_condidates = list(set(nodes.keys()).difference(nodes_with_input))
-    
+
     if len(root_condidates) != 1:
         raise NoRootException(len(root_condidates))
 
     return Tree(nodes[root_condidates[0]])
 
 
-def way_to_str(way, delimiter = ""):
+def way_to_str(way, delimiter=""):
     """Convert sequence of Nodes to a string"""
-    return delimiter.join([ str(n) for n in way ])
+    return delimiter.join([str(n) for n in way])
