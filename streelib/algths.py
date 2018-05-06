@@ -34,38 +34,27 @@ def df_traversal(tree):
     """
 
     ways = deque([])
-
-    root_node = tree.root_node
-    curent_path = deque([ [root_node,0] ])
+    curent_path = deque([ [tree.root_node, 0] ])
 
     while len(curent_path):
-
         last_path_entry = curent_path[-1]
         curent_node, next_cild_inx = last_path_entry
-
 
         if not len(curent_node.connections):
             #curent_node is a leave node
             ways.append([ node for node, it in curent_path ] )
-            #go back
-            curent_path.pop()
 
-        elif len(curent_node.connections) ==  next_cild_inx:
-            #there isn't more cildren nodes
-            #go back
+        if len(curent_node.connections) ==  next_cild_inx:
+            #there isn't more cildren nodes, go back
             curent_path.pop()
 
         else:
-            #there is an avaliable next cildren node
             #go to the next cildren, make it curent
             next_cild_node = curent_node.connections[next_cild_inx]
-
             #check for circles in path
             if len([ 1 for node, inx  in curent_path if node == next_cild_node ]):
                 raise CircleInTreeException(next_cild_node)
-
             curent_path.append( [next_cild_node,0] )
-
             last_path_entry[1] += 1
 
 
