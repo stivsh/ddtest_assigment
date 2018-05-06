@@ -40,7 +40,6 @@ A.C.F
 A.C.G
 
 #### Usage:
-Usage:
 * waysintree <file_name> [ --delimiter DELIMETER ]
 
 #### Arguments:
