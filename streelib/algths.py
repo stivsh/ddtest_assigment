@@ -52,9 +52,12 @@ def df_traversal(tree):
         else:
             # go to the next cildren, make it curent
             next_cild_node = curent_node.connections[next_cild_inx]
+
             # check for circles in path
-            if len([1 for node, inx in curent_path if node == next_cild_node]):
-                raise CircleInTreeException(next_cild_node)
+            for node, inx in curent_path:
+                if node == next_cild_node:
+                    raise CircleInTreeException(next_cild_node)
+
             curent_path.append([next_cild_node, 0])
             last_path_entry[1] += 1
 

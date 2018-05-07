@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='the_simple_tree_lib',
-    version='1.2',
+    version='2.1.1',
     description='test work for job assigment. Tree alg.',
     url='https://github.com/stivsh/ddtest_assigment',
     author='Sorokin Stepan',
